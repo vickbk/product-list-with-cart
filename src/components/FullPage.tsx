@@ -1,3 +1,19 @@
+import { Cart } from "./cart/Cart";
+import { ProductPage } from "./productList/ProductPage";
+import { Heading } from "./shared/Heading";
+import { Main } from "./shared/Main";
+import { SROnly } from "./shared/SROnly";
+
 export const FullPage = () => {
-  return <div>FullPage</div>;
+  return (
+    <Main>
+      <div>
+        <Heading>
+          <SROnly>A list of </SROnly> Desserts
+        </Heading>
+        <ProductPage />
+      </div>
+      <Cart />
+    </Main>
+  );
 };
