@@ -1,0 +1,22 @@
+@use "../functions/" as f;
+@use "../globals/" as g;
+
+.view {
+  @include g.from-desktop-down(g.$mobile) {
+    &,
+    &::backdrop {
+      display: none;
+    }
+  }
+  &__container {
+    max-inline-size: f.to-r-em(400);
+    &-navigator {
+      inset: 0 -1.5em;
+      max-block-size: 3em;
+    }
+  }
+  &::backdrop {
+    background-color: var(--black);
+    opacity: 0.5;
+  }
+}

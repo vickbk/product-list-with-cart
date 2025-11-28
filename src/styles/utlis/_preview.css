@@ -1,0 +1,13 @@
+.preview {
+  background-image: linear-gradient(
+    hsl(var(--light-slate-blue, red)),
+    hsl(var(--light-royal-blue, red))
+  );
+}
+
+.preview__score {
+  background-image: linear-gradient(
+    hsl(var(--persian-blue, red)),
+    hsl(var(--violet-blue, red))
+  );
+}

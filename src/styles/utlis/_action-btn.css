@@ -1,0 +1,10 @@
+.action-btn {
+  &:hover,
+  &:active,
+  &:focus {
+    background-image: linear-gradient(
+      hsl(var(--light-slate-blue, red)),
+      hsl(var(--light-royal-blue, red))
+    );
+  }
+}

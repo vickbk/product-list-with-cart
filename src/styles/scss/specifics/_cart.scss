@@ -1,0 +1,27 @@
+@use "../functions/" as f;
+@use "../globals/" as g;
+
+.cart {
+  inline-size: calc(100% - 1em);
+  max-inline-size: f.to-r-em(400);
+  &[data-count="0"] &__content {
+    display: none;
+  }
+  &:not(&[data-count="0"]) &__empty {
+    display: none;
+  }
+  &__header {
+    border-block-end: f.to-r-em(1) solid var(--grayish-blue);
+  }
+  &__content {
+    &-image {
+      inline-size: f.to-r-em(50);
+    }
+    &-delete {
+      inline-size: f.to-r-em(20);
+    }
+  }
+  @include g.from-mobile-up(g.$pc) {
+    margin-block-start: -4em;
+  }
+}
