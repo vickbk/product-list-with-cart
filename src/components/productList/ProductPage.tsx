@@ -1,3 +1,9 @@
+import { ProductElement } from "./productElement/ProductElement";
+
 export const ProductPage = () => {
-  return <div>ProductPage</div>;
+  return (
+    <div>
+      <ProductElement />
+    </div>
+  );
 };
