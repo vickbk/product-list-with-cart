@@ -6,7 +6,7 @@ import { SROnly } from "./shared/SROnly";
 
 export const FullPage = () => {
   return (
-    <Main>
+    <Main pageHasH1={false}>
       <div>
         <Heading>
           <SROnly>A list of </SROnly> Desserts
