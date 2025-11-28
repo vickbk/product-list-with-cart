@@ -4,7 +4,9 @@ import { Heading } from "../shared/Heading";
 export const EmptyCart = () => {
   return (
     <Article className="grid justify-items-center">
-      <Heading>Your added items will appear here.</Heading>
+      <Heading className="c-rose-500">
+        Your added items will appear here.
+      </Heading>
       <img
         className="row-start-1"
         src="/assets/images/illustration-empty-cart.svg"
