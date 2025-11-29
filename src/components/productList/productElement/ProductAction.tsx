@@ -25,7 +25,7 @@ export const ProductAction = ({
   return (
     <div className="relative">
       <button
-        className={`rose-50 p-2 rounded-l-full rounded-r-full border-2 b-rose-400 m-auto -translate-y-1/2 px-8 flex gap-4 items-center justify-center transition-transform duration-300 ${
+        className={`rose-50 p-2 rounded-l-full rounded-r-full border-2 b-rose-400 active-b-red active-out-red m-auto -translate-y-1/2 px-8 flex gap-4 items-center justify-center transition-transform duration-300 ${
           quantity ? "scale-0" : ""
         }`}
         type="button"
