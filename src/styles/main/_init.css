@@ -66,3 +66,11 @@ dialog {
     @apply backdrop-blur-sm;
   }
 }
+
+.rounded-x-full {
+  @apply rounded-l-full rounded-r-full;
+}
+
+.rounded-y-full {
+  @apply rounded-t-full rounded-b-full;
+}

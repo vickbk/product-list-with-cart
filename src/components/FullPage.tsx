@@ -13,12 +13,12 @@ export const FullPage = () => {
       pageHasH1={false}
     >
       <div>
+        <Cart />
         <Heading className="font-bold text-5xl mb-8">
           <SROnly>A list of </SROnly> Desserts
         </Heading>
         <ProductList desserts={desserts} />
       </div>
-      <Cart />
     </Main>
   );
 };
