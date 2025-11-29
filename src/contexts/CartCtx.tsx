@@ -1,4 +1,7 @@
 import { createContext } from "react";
-import type { DessertWQ } from "../lib/types/product-types";
+import type { CartContextParams } from "../lib/types/product-types";
 
-export const CartCtx = createContext<DessertWQ[]>([]);
+export const CartCtx = createContext<CartContextParams>([
+  [],
+  { addToCart() {}, deleteFromCart() {} },
+]);

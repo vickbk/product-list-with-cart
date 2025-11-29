@@ -8,7 +8,7 @@ import { FullCart } from "./FullCart";
 import { CartCtx } from "../../contexts/CartCtx";
 
 export const Cart = () => {
-  const desserts = useContext(CartCtx);
+  const [desserts] = useContext(CartCtx);
   const total = desserts.reduce(
     (total, { price, quantity }) => total + price * quantity,
     0

@@ -8,3 +8,13 @@ export type Dessert = {
 };
 
 export type DessertWQ = Dessert & { quantity: number };
+
+export type DessertWOQ = Dessert & { quantity?: number };
+
+export type CartContextParams = [
+  DessertWQ[],
+  {
+    addToCart: (dessert: Dessert) => void;
+    deleteFromCart: (index: number) => void;
+  }
+];
