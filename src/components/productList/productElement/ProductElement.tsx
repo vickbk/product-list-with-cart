@@ -15,15 +15,15 @@ export const ProductElement = ({
       <picture>
         <source media="(min-width: 768px)" srcSet={desktop} />
         <source media="(min-width: 576px)" srcSet={tablet} />
-        <img className="rounded-lg" src={mobile} alt="Just a place holder" />
+        <img className="rounded-xl" src={mobile} alt="Just a place holder" />
       </picture>
       <ProductAction />
-      <Heading className="c-rose-400 font-normal">
+      <Heading className="c-rose-500 font-normal">
         {category} <SROnly>dessert</SROnly>
       </Heading>
       <p>
         {name}
-        <span className="block c-red">${price}</span>
+        <span className="block c-red">${price.toFixed(2)}</span>
       </p>
     </Article>
   );

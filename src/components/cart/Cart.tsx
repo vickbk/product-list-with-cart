@@ -7,7 +7,7 @@ import { EmptyCart } from "./EmptyCart";
 export const Cart = () => {
   return (
     <Article
-      className="rose-50 p-4 rounded-2xl"
+      className="rose-50 p-4 rounded-xl"
       style={{ "--bg-accent": 1 } as CSSProperties}
     >
       <Heading className="c-red font-bold text-2xl mb-4">
