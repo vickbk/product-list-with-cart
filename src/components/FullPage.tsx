@@ -40,7 +40,7 @@ export const FullPage = () => {
   };
   return (
     <Main
-      className="p-4 grid lg:grid-cols-[3fr_1fr] items-start max-w-300 gap-4 tracking-tight"
+      className="p-4 grid lg:grid-cols-[3fr_1fr] items-start max-w-325 gap-4 tracking-tight"
       pageHasH1={false}
     >
       <CartCtx value={[items, { addToCart, deleteFromCart, setShowOrder }]}>
