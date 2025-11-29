@@ -17,7 +17,7 @@ export const FullPage = () => {
     let newItems: DessertWQ[] = [];
     if (has)
       newItems = items.map((item) =>
-        item.name === name ? { ...item, quatity: item.quantity + add } : item
+        item.name === name ? { ...item, quantity: item.quantity + add } : item
       );
     else newItems = [...items, { ...dessert, quantity: 1 }];
     setItems(newItems);
