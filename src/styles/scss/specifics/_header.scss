@@ -1,0 +1,54 @@
+@use "../functions/" as f;
+@use "../globals/" as g;
+
+.header {
+  &__button {
+    padding: 0;
+    background-color: var(--light-grayish-blue);
+    &-count {
+      top: -25%;
+      right: -25%;
+      font-size: 0.75rem;
+      &[data-count="0"] {
+        display: none;
+      }
+    }
+  }
+  &__profile {
+    inline-size: f.to-r-em(30);
+  }
+  &__navbar {
+    &-link {
+      color: var(--dark-grayish-blue);
+      padding-block-end: 1em;
+      @include g.from-mobile-up(g.$tablet) {
+        padding-block-end: 2em;
+      }
+      @include g.active-state {
+        font-weight: var(--bold);
+        color: var(--very-dark-blue);
+        border-bottom: 0.4em solid var(--orange);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    @include g.from-desktop-down(g.$mobile) {
+      &,
+      &-cover {
+        block-size: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      &-cover {
+        inline-size: 100vw;
+        opacity: 0.3;
+      }
+      &-link {
+        font-weight: bold;
+      }
+
+      inline-size: 70%;
+      background-color: var(--white);
+    }
+  }
+}

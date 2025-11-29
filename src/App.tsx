@@ -1,5 +1,7 @@
+import { FullPage } from "./components/FullPage";
+
 function App() {
-  return <></>;
+  return <FullPage />;
 }
 
 export default App;

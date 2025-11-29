@@ -1,0 +1,28 @@
+@use "../functions/" as f;
+@use "../globals/" as g;
+
+.preview {
+  --current-index: attr(data-current);
+  &__display {
+    &-navigator {
+      inset: 0;
+    }
+  }
+  &__images-option {
+    @include g.active-state {
+      .preview__images-option-image {
+        background-color: var(--pale-orange);
+        opacity: 0.3;
+      }
+    }
+    &-image {
+      border-color: var(--orange);
+      transition: all 0.5s ease-in;
+      &.active {
+        border: f.to-r-em(2) solid var(--orange);
+        background-color: var(--pale-orange);
+        opacity: 0.3;
+      }
+    }
+  }
+}
