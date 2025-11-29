@@ -5,15 +5,25 @@ import { ProductAction } from "./ProductAction";
 
 export const ProductElement = () => {
   return (
-    <Article>
-      <img src="./whatever" alt="Just a place holder" />
+    <Article className="font-semibold">
+      <picture>
+        <source
+          media="(min-width: 576px)"
+          srcSet="/public/assets/images/image-baklava-desktop.jpg"
+        />
+        <img
+          className="rounded-lg"
+          src="/assets/images/image-baklava-mobile.jpg"
+          alt="Just a place holder"
+        />
+      </picture>
       <ProductAction />
-      <Heading>
+      <Heading className="c-rose-400 font-normal">
         Waffle <SROnly>dessert</SROnly>
       </Heading>
       <p>
         Waffle with Berries
-        <span>$6.50</span>
+        <span className="block c-red">$6.50</span>
       </p>
     </Article>
   );
