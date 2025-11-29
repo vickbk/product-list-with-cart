@@ -7,10 +7,12 @@ export const FullCart = ({
   children,
   total,
   hide,
+  order = false,
 }: {
   hide: boolean;
   total: number;
   children: ReactNode;
+  order?: boolean;
 }) => {
   return (
     <Section
@@ -25,18 +27,22 @@ export const FullCart = ({
         Order Total<SROnly>: </SROnly>{" "}
         <span className="font-bold text-2xl">${total.toFixed(2)}</span>
       </p>
-      <p className="flex gap-4 justify-center rose-100 p-4 rounded-lg">
-        <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
-        <span>
-          This is a <span>carbon-neutral</span> delivery
-        </span>
-      </p>
-      <button
-        type="button"
-        className="red c-rose-50 w-full p-4 rounded-x-full mt-4"
-      >
-        Confirm Order
-      </button>
+      {!order && (
+        <p className="flex gap-4 justify-center rose-100 p-4 rounded-lg">
+          <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
+          <span>
+            This is a <span>carbon-neutral</span> delivery
+          </span>
+        </p>
+      )}
+      {!order && (
+        <button
+          type="button"
+          className="red c-rose-50 w-full p-4 rounded-x-full mt-4"
+        >
+          Confirm Order
+        </button>
+      )}
     </Section>
   );
 };

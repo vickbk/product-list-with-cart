@@ -7,6 +7,7 @@ import { default as desserts } from "../assets/data.json";
 import { CartCtx } from "../contexts/CartCtx";
 import { useContext, useState } from "react";
 import type { Dessert, DessertWQ } from "../lib/types/product-types";
+import { Order } from "./order/Order";
 
 export const FullPage = () => {
   const [cartItems] = useContext(CartCtx);
@@ -45,6 +46,7 @@ export const FullPage = () => {
           <ProductList desserts={desserts} />
         </div>
         <Cart />
+        <Order />
       </CartCtx>
     </Main>
   );
