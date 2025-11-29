@@ -11,7 +11,11 @@ export type DessertWQ = Dessert & { quantity: number };
 
 export type DessertWOQ = Dessert & { quantity?: number };
 
-export type AddToCart = (dessert: Dessert) => void;
+export type AddToCart = (
+  dessert: Dessert,
+  quantity?: number,
+  isButton?: boolean
+) => void;
 
 export type DeleteFromCart = (index: number) => void;
 

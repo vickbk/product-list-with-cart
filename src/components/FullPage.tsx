@@ -11,15 +11,22 @@ import type { Dessert, DessertWQ } from "../lib/types/product-types";
 export const FullPage = () => {
   const [cartItems] = useContext(CartCtx);
   const [items, setItems] = useState(cartItems);
-  const addToCart = (dessert: Dessert, add: 1 | -1 = 1) => {
+  const addToCart = (dessert: Dessert, add: number = 1, isButton = true) => {
     const { name } = dessert;
     const has = items.some(({ name: cartName }) => cartName === name);
-    let newItems: DessertWQ[] = [];
+    let newItems: DessertWQ[] = items;
     if (has)
-      newItems = items.map((item) =>
-        item.name === name ? { ...item, quantity: item.quantity + add } : item
-      );
-    else newItems = [...items, { ...dessert, quantity: 1 }];
+      newItems = items
+        .map((item) => {
+          if (item.name !== name) return item;
+          let { quantity } = item;
+          quantity =
+            add === -1 || (isButton && add === 1) ? quantity + add : add;
+          if (quantity < 1) return null;
+          return { ...item, quantity };
+        })
+        .filter((d) => d !== null);
+    else if (add > 0) newItems = [...items, { ...dessert, quantity: add }];
     setItems(newItems);
   };
   const deleteFromCart = (index: number) => {

@@ -85,11 +85,11 @@ $accent-color: map.get($colorsMap, red);
   .hv-out-#{"" + $name}:hover,
   .a-out-#{"" + $name}:active,
   .a-out-#{"" + $name}:focus {
-    outline: hsl(var(--#{"" + $name}) / 1) f.to-r-em(1) solid;
+    outline-color: hsl(var(--#{"" + $name}) / 1);
     transition: outline ease-in-out 0.3s;
   }
   @include active-colors(#{"out-" + $name}) {
-    outline: hsl(var(--#{"" + $name}) / 1) f.to-r-em(1) solid;
+    outline-color: hsl(var(--#{"" + $name}) / 1);
     transition: outline ease-in-out 0.3s;
   }
 }
