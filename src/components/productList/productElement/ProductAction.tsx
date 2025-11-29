@@ -55,6 +55,7 @@ export const ProductAction = ({
           }
           value={quantity || ""}
           ref={inputRef}
+          aria-label={"Insert the number you want for the " + dessert.name}
         />
         <ActionButton disabled={!quantity} onClick={() => addToCart(dessert)} />
       </div>
