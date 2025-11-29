@@ -23,7 +23,7 @@ export const FullPage = () => {
     setItems(newItems);
   };
   const deleteFromCart = (index: number) => {
-    setItems(items.filter((_, i) => i === index));
+    setItems(items.filter((_, i) => i !== index));
   };
   return (
     <Main
@@ -32,12 +32,12 @@ export const FullPage = () => {
     >
       <CartCtx value={[items, { addToCart, deleteFromCart }]}>
         <div>
-          <Cart />
           <Heading className="font-bold text-5xl mb-8">
             <SROnly>A list of </SROnly> Desserts
           </Heading>
           <ProductList desserts={desserts} />
         </div>
+        <Cart />
       </CartCtx>
     </Main>
   );

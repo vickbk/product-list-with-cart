@@ -8,10 +8,13 @@ import { FullCart } from "./FullCart";
 import { CartCtx } from "../../contexts/CartCtx";
 
 export const Cart = () => {
-  const [desserts] = useContext(CartCtx);
-  const total = desserts.reduce(
-    (total, { price, quantity }) => total + price * quantity,
-    0
+  const [desserts, { deleteFromCart }] = useContext(CartCtx);
+  const { total, totalItems } = desserts.reduce(
+    ({ total, totalItems }, { price, quantity }) => ({
+      total: total + price * quantity,
+      totalItems: totalItems + quantity,
+    }),
+    { total: 0, totalItems: 0 }
   );
   return (
     <Article
@@ -19,12 +22,17 @@ export const Cart = () => {
       style={{ "--bg-accent": 1 } as CSSProperties}
     >
       <Heading className="c-red font-bold text-2xl mb-4">
-        Your cart <SROnly>has</SROnly> (0) <SROnly>desserts currently</SROnly>
+        Your cart <SROnly>has</SROnly> ({totalItems}){" "}
+        <SROnly>desserts currently</SROnly>
       </Heading>
       {total === 0 && <EmptyCart />}
       <FullCart hide={total === 0} total={total}>
         {desserts.map((dessert, key) => (
-          <CartItem {...dessert} key={key} />
+          <CartItem
+            {...dessert}
+            key={key}
+            deleteFromCart={() => deleteFromCart(key)}
+          />
         ))}
       </FullCart>
     </Article>

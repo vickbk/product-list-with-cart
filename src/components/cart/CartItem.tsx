@@ -7,7 +7,8 @@ export const CartItem = ({
   image: { thumbnail },
   price,
   quantity,
-}: DessertWQ) => {
+  deleteFromCart,
+}: DessertWQ & { deleteFromCart: () => void }) => {
   return (
     <Article className="flex gap-4 py-4 items-center border-b b-rose-300">
       <img className="rounded-lg" width={50} src={thumbnail} alt="" />
@@ -21,7 +22,11 @@ export const CartItem = ({
           </span>
         </p>
       </div>
-      <button className="ml-auto border rounded-full p" type="button">
+      <button
+        className="ml-auto border rounded-full p"
+        type="button"
+        onClick={deleteFromCart}
+      >
         <img
           src="/assets/images/icon-remove-item.svg"
           alt="Remove item"
