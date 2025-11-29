@@ -18,7 +18,7 @@ export const Cart = () => {
   );
   return (
     <Article
-      className="rose-50 p-8 rounded-xl"
+      className="rose-20 p-8 rounded-xl"
       style={{ "--bg-accent": 1 } as CSSProperties}
     >
       <Heading className="c-red font-bold text-2xl mb-4">

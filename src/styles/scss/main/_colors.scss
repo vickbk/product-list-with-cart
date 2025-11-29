@@ -7,6 +7,7 @@ $colorsMap: (
   red: 13 86% 42%,
   green: 159 69% 38%,
   // Neutral
+  rose-20: 0 0% 100%,
   rose-50: 20 50% 98%,
   rose-100: 13 31% 94%,
   rose-300: 14 25% 72%,
@@ -15,7 +16,7 @@ $colorsMap: (
   rose-900: 14 65% 9%
 );
 
-$primary-color: map.get($colorsMap, rose-100);
+$primary-color: map.get($colorsMap, rose-50);
 $link-color: map.get($colorsMap, red);
 $text-color: map.get($colorsMap, rose-900);
 $accent-color: map.get($colorsMap, red);

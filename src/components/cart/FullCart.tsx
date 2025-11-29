@@ -37,7 +37,7 @@ export const FullCart = ({
           </span>
         </p>
       )}
-      {!order && (
+      {!order && !hide && (
         <button
           type="button"
           className="red c-rose-50 w-full p-4 rounded-x-full mt-4"

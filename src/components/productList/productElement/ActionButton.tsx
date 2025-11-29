@@ -11,7 +11,7 @@ export const ActionButton = ({
   if (disabled) disable.disabled = true;
   return (
     <button
-      className="rounded-full border b-rose-50 p-1 aspect-square"
+      className="rounded-full border b-rose-20 p-1 aspect-square"
       type="button"
       onClick={onClick}
       {...disable}
