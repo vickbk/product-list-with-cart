@@ -6,3 +6,5 @@ export type Dessert = {
   price: number;
   image: Record<ImageTypes, string>;
 };
+
+export type DessertWQ = Dessert & { quantity: number };
