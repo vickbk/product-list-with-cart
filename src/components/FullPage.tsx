@@ -8,7 +8,7 @@ export const FullPage = () => {
   return (
     <Main pageHasH1={false}>
       <div>
-        <Heading>
+        <Heading className="font-bold text-3xl mb-4">
           <SROnly>A list of </SROnly> Desserts
         </Heading>
         <ProductPage />
