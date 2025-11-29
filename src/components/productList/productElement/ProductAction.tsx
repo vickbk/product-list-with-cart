@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import type { AddToCart, DessertWOQ } from "../../../lib/types/product-types";
+import { ActionButton } from "./ActionButton";
 
 export const ProductAction = ({
   addToCart,
@@ -9,27 +11,41 @@ export const ProductAction = ({
   addToCart: AddToCart;
   quantity?: number;
 }) => {
+  const disabled: { disabled?: boolean } = {};
+  if (quantity) disabled.disabled = true;
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (inputRef.current) {
+      const { current } = inputRef;
+      if (!quantity && current !== document.activeElement)
+        current.disabled = true;
+      else current.removeAttribute("disabled");
+    }
+  }, [quantity]);
   return (
     <div className="relative">
       <button
-        className="rose-50 p-2 rounded-l-full rounded-r-full border-2 b-rose-400 m-auto -translate-y-1/2 px-8 flex gap-4 items-center justify-center"
+        className={`rose-50 p-2 rounded-l-full rounded-r-full border-2 b-rose-400 m-auto -translate-y-1/2 px-8 flex gap-4 items-center justify-center transition-transform duration-300 ${
+          quantity ? "scale-0" : ""
+        }`}
         type="button"
         onClick={() => addToCart(dessert)}
+        {...disabled}
       >
         <img src="/assets/images/icon-add-to-cart.svg" alt="" />
         Add to cart
       </button>
-      <div className="red c-rose-50 p-4 rounded-x-full max-w-7/10 absolute inset-x-0 mx-auto top-0 -translate-y-1/2 flex gap-4 items-center">
-        <button
-          className="rounded-full border b-rose-50 p-1 aspect-square"
-          type="button"
+      <div
+        className={`red c-rose-50 p-4 py-3 rounded-x-full max-w-7/10 absolute inset-x-0 mx-auto top-0 -translate-y-1/2 flex gap-4 items-center transition-transform duration-300 ${
+          !quantity ? "scale-0 focus-within:scale-100" : ""
+        }`}
+      >
+        <ActionButton
+          increment={false}
           onClick={() => addToCart(dessert, -1)}
-        >
-          <img
-            src="/assets/images/icon-decrement-quantity.svg"
-            alt="Decrement the number of items"
-          />
-        </button>
+          disabled={!quantity}
+        />
+
         <input
           type="number"
           className="min-w-0 grow text-center focus:outline-none"
@@ -38,17 +54,9 @@ export const ProductAction = ({
             addToCart(dessert, +value, false)
           }
           value={quantity || ""}
+          ref={inputRef}
         />
-        <button
-          className="rounded-full border b-rose-50 p-1 aspect-square"
-          type="button"
-          onClick={() => addToCart(dessert)}
-        >
-          <img
-            src="/assets/images/icon-increment-quantity.svg"
-            alt="Increment the number of items"
-          />
-        </button>
+        <ActionButton disabled={!quantity} onClick={() => addToCart(dessert)} />
       </div>
     </div>
   );
