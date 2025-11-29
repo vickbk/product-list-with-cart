@@ -4,10 +4,10 @@
 
 $colorsMap: (
   // Primary
-  red: 26 100% 55%,
-  green: 25 100% 94%,
+  red: 14 86% 42%,
+  green: 159 69% 38%,
   // Neutral
-  rose-50: 220 13% 13%,
+  rose-50: 20 50% 98%,
   rose-100: 13 31% 94%,
   rose-300: 14 25% 72%,
   rose-400: 7 20% 60%,
@@ -15,9 +15,9 @@ $colorsMap: (
   rose-900: 14 65% 9%
 );
 
-$primary-color: map.get($colorsMap, rose-50);
+$primary-color: map.get($colorsMap, rose-100);
 $link-color: map.get($colorsMap, red);
-$text-color: map.get($colorsMap, green);
+$text-color: map.get($colorsMap, rose-900);
 $accent-color: map.get($colorsMap, red);
 
 :root {
@@ -26,8 +26,8 @@ $accent-color: map.get($colorsMap, red);
   --accent-color: #{$accent-color};
   --link-color: #{$link-color};
   @media (prefers-color-scheme: dark) {
-    --background: #{$text-color};
-    --foreground: #{$primary-color};
+    // --background: #{$text-color};
+    // --foreground: #{$primary-color};
   }
   & {
     @each $name, $color in $colorsMap {
