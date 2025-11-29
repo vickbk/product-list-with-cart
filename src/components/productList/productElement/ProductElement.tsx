@@ -14,7 +14,7 @@ export const ProductElement = ({
     <Article className="font-semibold">
       <picture>
         <source media="(min-width: 768px)" srcSet={desktop} />
-        <source media="(min-width: 576px)" srcSet={tablet} />
+        <source media="(min-width: 640px)" srcSet={tablet} />
         <img className="rounded-xl" src={mobile} alt="Just a place holder" />
       </picture>
       <ProductAction />

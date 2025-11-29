@@ -53,7 +53,7 @@ body {
   color: hsl(var(--foreground));
   font-family: var(--ff-sans);
   line-height: 1.6;
-  @apply min-h-screen;
+  @apply min-h-screen grid place-items-center;
 }
 
 button {
