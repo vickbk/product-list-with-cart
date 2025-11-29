@@ -18,7 +18,7 @@ export const Order = ({ confirmOrder }: { confirmOrder: () => void }) => {
       isOpen={true}
     >
       <Section className="grid gap-4">
-        <img src="/assets/images/icon-order-confirmed.svg" alt="" />
+        <img src="./assets/images/icon-order-confirmed.svg" alt="" />
         <Heading className="text-4xl font-bold">Order Confirmed</Heading>
         <p className="c-rose-400">We hope you enjoy your food!</p>
         <div className="p-4 rose-100 rounded-lg">

@@ -32,7 +32,7 @@ export const ProductAction = ({
         onClick={() => addToCart(dessert)}
         {...disabled}
       >
-        <img src="/assets/images/icon-add-to-cart.svg" alt="" />
+        <img src="./assets/images/icon-add-to-cart.svg" alt="" />
         Add to cart
       </button>
       <div

@@ -9,7 +9,7 @@ export const EmptyCart = () => {
       </Heading>
       <img
         className="row-start-1"
-        src="/assets/images/illustration-empty-cart.svg"
+        src="./assets/images/illustration-empty-cart.svg"
         alt="Your cart is empty for now."
       />
     </Article>

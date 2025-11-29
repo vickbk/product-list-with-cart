@@ -17,7 +17,7 @@ export const ActionButton = ({
       {...disable}
     >
       <img
-        src={`/assets/images/icon-${
+        src={`./assets/images/icon-${
           increment ? "increment" : "decrement"
         }-quantity.svg`}
         alt={`${increment ? "increment" : "decrement"} the number of items`}

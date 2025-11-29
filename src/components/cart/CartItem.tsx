@@ -38,7 +38,7 @@ export const CartItem = ({
           onClick={deleteFromCart}
         >
           <img
-            src="/assets/images/icon-remove-item.svg"
+            src="./assets/images/icon-remove-item.svg"
             alt="Remove item"
             width={15}
           />
