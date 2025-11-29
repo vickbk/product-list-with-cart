@@ -24,5 +24,6 @@ export type CartContextParams = [
   {
     addToCart: AddToCart;
     deleteFromCart: DeleteFromCart;
+    setShowOrder?: (show: boolean) => void;
   }
 ];

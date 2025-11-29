@@ -8,7 +8,7 @@ import { FullCart } from "./FullCart";
 import { CartCtx } from "../../contexts/CartCtx";
 
 export const Cart = () => {
-  const [desserts, { deleteFromCart }] = useContext(CartCtx);
+  const [desserts, { deleteFromCart, setShowOrder }] = useContext(CartCtx);
   const { total, totalItems } = desserts.reduce(
     ({ total, totalItems }, { price, quantity }) => ({
       total: total + price * quantity,
@@ -26,7 +26,7 @@ export const Cart = () => {
         <SROnly>desserts currently</SROnly>
       </Heading>
       {total === 0 && <EmptyCart />}
-      <FullCart hide={total === 0} total={total}>
+      <FullCart hide={total === 0} total={total} setShowOrder={setShowOrder}>
         {desserts.map((dessert, key) => (
           <CartItem
             {...dessert}

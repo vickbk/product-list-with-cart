@@ -8,11 +8,13 @@ export const FullCart = ({
   total,
   hide,
   order = false,
+  setShowOrder,
 }: {
   hide: boolean;
   total: number;
   children: ReactNode;
   order?: boolean;
+  setShowOrder?: (showOrder: true) => void;
 }) => {
   return (
     <Section
@@ -39,6 +41,7 @@ export const FullCart = ({
         <button
           type="button"
           className="red c-rose-50 w-full p-4 rounded-x-full mt-4"
+          onClick={() => setShowOrder!(true)}
         >
           Confirm Order
         </button>

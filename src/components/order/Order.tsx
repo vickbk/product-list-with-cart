@@ -6,7 +6,7 @@ import { CartCtx } from "../../contexts/CartCtx";
 import { CartItem } from "../cart/CartItem";
 import { FullCart } from "../cart/FullCart";
 
-export const Order = () => {
+export const Order = ({ confirmOrder }: { confirmOrder: () => void }) => {
   const [cartItems] = useContext(CartCtx);
   const total = cartItems.reduce(
     (total, { quantity, price }) => total + quantity * price,
@@ -31,6 +31,7 @@ export const Order = () => {
         <button
           type="button"
           className="red c-rose-50 w-full p-4 rounded-x-full mt-4"
+          onClick={confirmOrder}
         >
           Start New Order
         </button>

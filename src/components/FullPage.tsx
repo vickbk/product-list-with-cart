@@ -12,6 +12,7 @@ import { Order } from "./order/Order";
 export const FullPage = () => {
   const [cartItems] = useContext(CartCtx);
   const [items, setItems] = useState(cartItems);
+  const [showOrder, setShowOrder] = useState(false);
   const addToCart = (dessert: Dessert, add: number = 1, isButton = true) => {
     const { name } = dessert;
     const has = items.some(({ name: cartName }) => cartName === name);
@@ -33,12 +34,16 @@ export const FullPage = () => {
   const deleteFromCart = (index: number) => {
     setItems(items.filter((_, i) => i !== index));
   };
+  const confirmOrder = () => {
+    setItems([]);
+    setShowOrder(false);
+  };
   return (
     <Main
       className="p-4 grid lg:grid-cols-[3fr_1fr] items-start max-w-300 gap-4 tracking-tight"
       pageHasH1={false}
     >
-      <CartCtx value={[items, { addToCart, deleteFromCart }]}>
+      <CartCtx value={[items, { addToCart, deleteFromCart, setShowOrder }]}>
         <div>
           <Heading className="font-bold text-5xl mb-8">
             <SROnly>A list of </SROnly> Desserts
@@ -46,7 +51,7 @@ export const FullPage = () => {
           <ProductList desserts={desserts} />
         </div>
         <Cart />
-        <Order />
+        {showOrder && <Order confirmOrder={confirmOrder} />}
       </CartCtx>
     </Main>
   );
