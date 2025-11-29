@@ -31,7 +31,7 @@ export const FullCart = ({
       </p>
       {!order && (
         <p className="flex gap-4 justify-center rose-100 p-4 rounded-lg">
-          <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="" />
           <span>
             This is a <span>carbon-neutral</span> delivery
           </span>
